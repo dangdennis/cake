@@ -2,6 +2,7 @@
 # and returns the best profit I could have made from 1 purchase 
 # and 1 sale of 1 Apple stock yesterday.
 
+# Solution 1
 # Time / Space
 # O(n) / O(1)
 def get_max_profit(stock_prices):
@@ -23,7 +24,7 @@ def get_max_profit(stock_prices):
 stock_prices = [10, 11, 12, 13, 20]
 print get_max_profit(stock_prices)
 
-# their solution
+# Solution 2
 # Time / Space
 # O(n) / O(1)
 def get_max_profit(stock_prices_yesterday):
