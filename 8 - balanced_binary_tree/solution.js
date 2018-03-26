@@ -97,13 +97,13 @@ const r5 = new BinaryTreeNode(5);
 const r6 = new BinaryTreeNode(6);
 const r7 = new BinaryTreeNode(7);
 
-root.insertLeft(r2);
-root.insertRight(r3);
-r2.insertLeft(r4);
-r3.insertLeft(r5);
-r4.insertLeft(r6);
-// r4.insertRight(r7); // TRUE
-r6.insertLeft(r7); // FALSE
+const r2 = root.insertLeft(2);
+const r3 = root.insertRight(3);
+const r4 = r2.insertLeft(4);
+const r5 = r3.insertLeft(5);
+const r6 = r4.insertLeft(6);
+// const r7 = r4.insertRight(7); // TRUE
+const r7 = r6.insertLeft(7); // FALSE
 
 // console.log(findSuperBalanced(root));
 
@@ -164,16 +164,16 @@ function isBalanced(treeRoot) {
 // Breadth first search
 
 function breadthFirstSearch(node, cb) {
-    let current = [node]
-    while(current.length > 0) {
-        let next = []
-        for(let node of current) {
-            cb(node)
-            if(node.left) next.push(node.left)
-            if(node.right) next.push(node.right)
+    let current = [node];
+    while (current.length > 0) {
+        let next = [];
+        for (let node of current) {
+            cb(node);
+            if (node.left) next.push(node.left);
+            if (node.right) next.push(node.right);
         }
         current = next;
     }
 }
 
-breadthFirstSearch(root, node => console.log(node))
+breadthFirstSearch(root, node => console.log(node));
