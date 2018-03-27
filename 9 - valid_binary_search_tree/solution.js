@@ -29,6 +29,8 @@ const r7 = r6.insertRight(7);
 const r35 = r7.insertRight(35);
 
 // Solution 1: Recursive
+// Time / space
+// O(n) / O(n)
 function isBinarySearchTree(node, lowerBound, upperBound) {
     lowerBound = typeof lowerBound !== "undefined" ? lowerBound : -Infinity;
     upperBound = typeof upperBound !== "undefined" ? upperBound : Infinity;
