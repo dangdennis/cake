@@ -15,20 +15,20 @@ Use a nested object with keys as sections of the URL
 visited = {
     "www.": {
         "google.com": true,
-        "interviewcake.com": true
+        "interviewcake.com": true,
     },
     "stg1.": {
-        "experian.com": true
-    }
+        "experian.com": true,
+    },
 };
 
-// Space 
+// Space
 // To store all possible permutations of 1, 2, 3, 4, or 5 character URLs,
 // O(n26^n) : n26^n + (n-1)26^(n-1) + ... + 1 * 26^1 -------------- that's alot of memory needed
 
 // Solution 2 - Trie, recursively share prefixes
 // Example: google.com
-visited["g"]["o"]["o"]["g"]["l"]["e"]["."]["c"]["o"]["m"]["*"] = true;
+// visited["g"]["o"]["o"]["g"]["l"]["e"]["."]["c"]["o"]["m"]["*"] = true;
 // * marks the end of an entry. So how do you implement a trie? Nested objects, nodes and pointers, or combination of both.
 
 // Evaluate the pros and cons of the different implementations
@@ -64,23 +64,17 @@ class Trie {
     }
 }
 
+const trie = new Trie();
+trie.addWord("dangdennis.com");
+console.log(trie.rootNode);
+trie.addWord("dangdennis.com/test");
+console.log(trie.rootNode);
+trie.addWord("dangdoode.com")
+
 // Space
 // O(26^n) : 26^n + 26^(n-1) + ... + 26^1
 // The first layer of nodes has 26 nodes, one for each letter. The second layer
 // has 26 nodes, one at each first layer node.
 
-// Takeaway: Start with a small optimization, and ask "how can we can take 
+// Takeaway: Start with a small optimization, and ask "how can we can take
 // this same idea even further?"
-
-
-
-
-
-
-
-
-
-
-
-
-
