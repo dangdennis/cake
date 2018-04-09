@@ -34,4 +34,5 @@ console.log(q.stackTwo);
 console.log(q.dequeue());
 console.log(q.stackOne, q.stackTwo);
 q.enqueue(4);
+q.enqueue(5);
 console.log(q.stackOne, q.stackTwo);
