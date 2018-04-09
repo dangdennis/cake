@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cake 18</title>
+</head>
+
+<body>
+    <button id="btn-0">Button 1!</button>
+    <button id="btn-1">Button 2!</button>
+    <button id="btn-2">Button 3!</button>
+
+    <script type="text/javascript">
+        // Something's going wrong though. Can you tell what it is
+        var prizes = ['A Unicorn!', 'A Hug!', 'Fresh Laundry!'];
+        debugger;
+        for (var btnNum = 0; btnNum < prizes.length; btnNum++) {
+            // for each of our buttons, when the user clicks it...
+            (function (btnNum) {
+                document.getElementById('btn-' + btnNum).onclick = function () {
+                    // tell her what she's won!
+                    alert(prizes[btnNum]);
+                };
+            })(btnNum)
+
+            // They're rewrite. wthelll that passing in param to anonymous function
+            // for (var btnNum = 0; btnNum < prizes.length; btnNum++) {
+            //     // for each of our buttons, when the user clicks it...
+            //     document.getElementById('btn-' + btnNum).onclick = function (frozenBtnNum) {
+            //         return function () {
+            //             // tell her what she's won!
+            //             alert(prizes[frozenBtnNum]);
+            //         };
+            //     }(btnNum);  // LOOK! We're passing btnNum to our anonymous function here!
+            // }
+        }
+    </script>
+</body>
+
+</html>
