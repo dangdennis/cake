@@ -1,6 +1,9 @@
 /* Delete a node from a singly-linked list, given only a 
  variable pointing to that node. */
 
+// Time / space
+// O(1) / O(1)
+
 function LinkedListNode(value) {
     this.value = value;
     this.next = null;
