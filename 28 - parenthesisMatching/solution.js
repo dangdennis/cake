@@ -2,6 +2,8 @@
  * Write a function that, given a sentence like the one above,
  * along with the position of an opening parenthesis,
  * finds the corresponding closing parenthesis.
+ * 
+ * The trick to many "parsing" questions like this is using a stack
  */
 
 const testString =
