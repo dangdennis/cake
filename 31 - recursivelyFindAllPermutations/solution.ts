@@ -6,8 +6,31 @@
  * we'd write an iterative version. To start, assume every character in
  * the input string is unique. Your function can have loops—
  * it just needs to also be recursive.
+ *
+ * Lesson: first solve the problem "by hand", then translate to code
  */
 
-function generateStringPermutations(string: string): boolean {
-    return Boolean();
+function getPermutations(word: string): Set<string> {
+    if (word.length <= 1) return new Set(word);
+
+    const allCharsExceptlast = word.slice(0, -1);
+    const lastChar = word[word.length - 1];
+
+    const permutationsOfAllCharsExceptLast = getPermutations(allCharsExceptlast);
+
+    const permutations = new Set();
+
+    permutationsOfAllCharsExceptLast.forEach(permutation => {
+        for (let i = 0; i <= allCharsExceptlast.length; i++) {
+            const permutation =
+                permutationsOfAllCharsExceptLast.slice(0, i) +
+                +lastChar +
+                permutationsOfAllCharsExceptLast.slice(i);
+            permutations.add(permutation);
+        }
+    });
+
+    return permutations;
 }
+
+console.log(getPermutations("cats"));

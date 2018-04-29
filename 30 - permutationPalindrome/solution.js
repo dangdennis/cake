@@ -10,11 +10,13 @@ function isAnyPermutationPalindrome(sentence) {
     for (var i = 0; i < sentence.length; i++) {
         if (!set.has(sentence[i])) {
             set.add(sentence[i]);
-        } else {
+        }
+        else {
             set["delete"](sentence[i]);
         }
     }
-    if (set.size <= 1) return true;
+    if (set.size <= 1)
+        return true;
     return false;
 }
 console.log(isAnyPermutationPalindrome("civic"));
