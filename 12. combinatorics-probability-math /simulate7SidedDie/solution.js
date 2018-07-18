@@ -70,6 +70,6 @@ function rand7() {
         if (outcomeNumber > 21) continue;
 
         // our outcome was fine. return it!
-        return outcomeNumber % 7 + 1;
+        return (outcomeNumber % 7) + 1;
     }
 }
